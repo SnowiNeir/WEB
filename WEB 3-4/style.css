@@ -1,0 +1,91 @@
+*{
+	scroll-behavior: smooth;
+}
+
+html{
+    background-color: #8f8f8f;
+}
+
+img{
+    max-width: 400px;
+    max-height: 400px;
+    /* размер фоток */
+}
+
+.centering{
+    text-align: center;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+}
+
+.accordion-item{
+    cursor: pointer;
+}
+
+.item_top{
+    display: flex;
+    justify-content: space-between;
+    column-gap: 3rem; /*одинаковое расстояние между право/лево*/
+    margin-bottom: 1.5rem;
+}
+
+.item_icon{
+    display: flex;
+    align-self: center;
+    align-items: center;
+}
+
+.plus-icon{
+    transition: transform 0.6s ease; /*параметр transition, плавно изменяет прозрачность и появление изображения*/
+}
+/* я поставил на параметры на 0.6 секунды*/ 
+.box {
+    /* Изначально скрываем элемент через  прозрачность и высоту = 0*/
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 1s ease, max-height 1s ease;
+    grid-template-rows: 0fr;
+}
+.accordion-item:hover .box {
+    opacity: 1;
+    max-height: 300px;
+    margin-top: 1rem;
+}
+input[type="radio"]:checked + .accordion-item .box {
+    opacity: 1;
+    max-height: 300px;
+    margin-top: 1rem;
+}
+input{
+    display: none;
+}
+
+.accordion-item:hover .box {
+    /*  тег important для перезаписи более приоритетного параметра display:none */
+    display: block !important; 
+    transition: transform 1s ease;  
+}
+
+/* Косметика и анимации */
+.accordion-item:hover{
+    color:rgb(7, 116, 150);
+}
+input[type="radio"]:checked + label {
+    color: rgb(0, 66, 128);
+}
+.accordion-item .plus-icon:hover {
+    transform: rotate(45deg);
+}
+input[type="radio"]:checked + .accordion-item .plus-icon {
+    transform: rotate(45deg);
+}
