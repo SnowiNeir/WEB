@@ -23,8 +23,6 @@ CREATE TABLE IF NOT EXISTS `category` (
 
 INSERT INTO `category` (`name`, `keywords`, `description`) VALUES ('Программирование', 'C# C++', "Статьи о программировании"), ('Дизайн', 'UX UI Figma', "Статьи о дизайне"), ('Бизнес', "", "Статьи о Бизнесе"), ('Музыка', "Linkin' Park", "Статьи о музыке"), ('Видеоигры', "Steam", "Статьи о видеоиграх");
 
-use `post`;
-
 INSERT INTO `post` (category_id, title, excerpt, text, keywords, description, created) 
 VALUES (3, "Новый Дизайн", "Дизайн", "Изменнён Дизайн", "Welt", "Описание", NOW());
 
